@@ -1,0 +1,112 @@
+Function Declaration:
+
+A function declaration is a way to define a function in JavaScript.
+Example:
+function multiply(num){
+    return num*num;
+}
+
+Function Expression:
+
+A function expression involves storing an anonymous function in a variable.
+Example:
+let square = function(num){
+    return num*num;
+}
+console.log(square(5));
+
+
+First-Class Functions:
+
+In a language with first-class functions, functions are treated as variables.
+They can be passed as arguments, returned from other functions, and assigned to variables.
+Example:
+
+function displaySquare(fn){
+    console.log("Square is " + fn);
+}
+displaySquare(square(5));
+
+IIFE (Immediately Invoked Function Expression):
+
+A function that is executed as soon as it is declared.
+Example:
+
+(function plusss(num){
+    console.log(num + num);
+})(5);
+
+Params vs. Arguments:
+
+Parameters are the variables in a function declaration.
+Arguments are the actual values passed to a function.
+Example:
+
+function xyz(num){ // params
+    return num;
+}
+xyz(10); // arguments
+
+Spread Operator vs. Rest Operator:
+
+Rest parameter syntax allows us to represent an indefinite number of arguments as an array.
+Spread operator allows an iterable to spread/expand individually inside a receiver.
+Example:
+
+function nums(...nums){ // rest operator
+    return nums;
+}
+let arr = [1,2,3];
+nums(...arr); // spread operator
+
+Callback Function:
+
+A function passed into another function as an argument and invoked inside the outer function.
+Example:
+
+function myDisplayer(some) {
+    return some;
+}
+function myFirst() {
+    return myDisplayer("Hello");
+}
+myFirst();
+
+Arrow Function vs. Normal Function:
+
+Syntax
+Example:
+
+const arrowFun = () => 5; // Arrow function
+function normalFun() { 
+return 5
+} // Normal function
+
+
+arguments Keyword:
+
+The arguments object is an array-like object accessible inside functions that contains the values of the arguments passed to that function.
+Note that arrow functions do not have their own arguments object.
+Example:
+
+function aabbcc() {
+    console.log(arguments);
+}
+aabbcc(1234);
+
+this in Arrow Function:
+
+Arrow functions do not have their own this context and inherit it from the surrounding scope.
+Example:
+
+let user = {
+    username: "subrat",
+    fun1: () => console.log("subrat", this.username), // Arrow function (points to global object)
+    fun2() {
+        console.log("subrat", this.username); // Normal function (points to user object)
+    }
+};
+user.fun1();
+user.fun2();
+
+
